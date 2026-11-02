@@ -19,16 +19,15 @@ npm run build:single   # one self-contained HTML file -> dist-single/index.html
 npm run typecheck
 ```
 
-## Hosting (Cloudflare Pages)
+## Hosting (Cloudflare)
 
-The site deploys automatically from this repository.
+The site deploys automatically from this repository through Cloudflare Workers Builds.
 
-- Framework preset: **None** (or Vite)
 - Build command: `npm run build`
-- Build output directory: `dist`
+- Deploy command: `npx wrangler deploy` (uploads `dist/`, configured in `wrangler.jsonc`)
 - Node version: 22 (pinned in `.nvmrc`)
 
-Every push to `main` publishes a new version. Pull requests and other branches get their own preview link.
+Every push to `main` publishes a new version.
 
 ## Controls
 
