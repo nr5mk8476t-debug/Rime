@@ -1,4 +1,4 @@
-# Underhold
+# Rime
 
 A pixel-art pawn shop survival game set on a frozen mining moon. Buy, sell, haggle and scan goods, and keep enough credits to pay Mr. Voss every five days.
 

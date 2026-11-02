@@ -15,7 +15,7 @@ async def main():
         logs = []
         pg.on('console', lambda m: logs.append(f'{m.type}: {m.text}'))
         pg.on('pageerror', lambda e: logs.append(f'PAGEERROR: {e}'))
-        import os; await pg.goto(os.environ.get('URL', 'file:///home/claude/vel/dist-single/underhold.html'))
+        import os; await pg.goto(os.environ.get('URL', 'file:///home/claude/vel/dist-single/rime.html'))
         await pg.wait_for_timeout(500)
         if js:
             await pg.evaluate(js)

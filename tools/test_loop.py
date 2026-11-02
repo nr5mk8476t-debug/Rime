@@ -1,7 +1,7 @@
 """Five-day loop tests: an automated shopkeeper plays whole runs through the game's own controls."""
 import asyncio, json
 from playwright.async_api import async_playwright
-URL = 'file:///home/claude/vel/dist-single/underhold.html'
+URL = 'file:///home/claude/vel/dist-single/rime.html'
 
 BOT = """async ({ policy, maxSec }) => {
   const sc = window.__scene, r = sc.run; window.__speed = 12;
@@ -68,7 +68,7 @@ async def main():
         await pg.evaluate("(() => { const sc = window.__scene; sc.begin(false); sc.run.newRun(1592); sc.resetView(); })()")
         res = await pg.evaluate(BOT, { 'policy': { 'days': 5, 'refuseBuys': True, 'refuseSells': True }, 'maxSec': 150 })
         check('broke player dies at the deadline', res['mode'] == 'dead' and 'You owed' in res['cause'], (res['mode'], res['cause'], res['log'][-2:]))
-        check('save wiped after death', await pg.evaluate("!localStorage.getItem('underhold.save.v1')"))
+        check('save wiped after death', await pg.evaluate("!localStorage.getItem('rime.save.v1')"))
         check('no page errors (broke)', not errs, errs)
         await pg.close()
 

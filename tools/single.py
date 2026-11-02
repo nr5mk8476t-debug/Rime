@@ -5,4 +5,4 @@ head = re.search(r'<head>(.*?)</head>', s, re.S).group(1); body = re.search(r'<b
 head = re.sub(r'<meta name="viewport"[^>]*>\s*', '', head)
 scripts = re.findall(r'<script[\s\S]*?</script>', head)
 for sc in scripts: head = head.replace(sc, '')
-open('dist-single/underhold.html', 'w').write(head.strip() + '\n' + body.strip() + '\n' + '\n'.join(scripts))
+open('dist-single/rime.html', 'w').write(head.strip() + '\n' + body.strip() + '\n' + '\n'.join(scripts))

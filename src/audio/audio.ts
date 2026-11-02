@@ -1,4 +1,4 @@
-// UNDERHOLD sound: everything is synthesized with Web Audio so it ships inside the page.
+// RIME sound: everything is synthesized with Web Audio so it ships inside the page.
 // Mixer: ambience / sfx / ui / voice / music buses -> master. A generated small-metal-room reverb
 // is shared by all buses through sends. Any synth sound can later be replaced by a recorded file
 // (see `samples` / play()), without touching game code.
@@ -29,7 +29,7 @@ export class Sound {
 
   constructor() {
     try {
-      const v = JSON.parse(localStorage.getItem('underhold.sound') || 'null');
+      const v = JSON.parse(localStorage.getItem('rime.sound') || 'null');
       if (v) { this.muted = !!v.muted; this.volume = typeof v.volume === 'number' ? v.volume : 0.8; }
     } catch { /* storage blocked */ }
   }
@@ -77,7 +77,7 @@ export class Sound {
     if (this.ctx && !this.muted) this.master.gain.setTargetAtTime(this.volume, this.ctx.currentTime, 0.05);
     this.save();
   }
-  private save() { try { localStorage.setItem('underhold.sound', JSON.stringify({ muted: this.muted, volume: this.volume })); } catch { /* blocked */ } }
+  private save() { try { localStorage.setItem('rime.sound', JSON.stringify({ muted: this.muted, volume: this.volume })); } catch { /* blocked */ } }
 
   // ---------------------------------------------------------------------------------- building blocks
   private makeNoise() {

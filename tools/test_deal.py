@@ -1,7 +1,7 @@
 """Play Kell's encounter through the real UI and check credits, stock and outcomes."""
 import asyncio, json, sys
 from playwright.async_api import async_playwright
-URL = 'file:///home/claude/vel/dist-single/underhold.html'
+URL = 'file:///home/claude/vel/dist-single/rime.html'
 TRAY = json.load(open('/home/claude/vel/src/art/plates/tray.json'))
 
 async def run(script):

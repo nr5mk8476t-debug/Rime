@@ -1,4 +1,4 @@
-// UNDERHOLD master palette.
+// RIME master palette.
 // Every sprite and surface is drawn from these ramps so the whole scene stays coherent.
 // Ramps run dark -> light. Colours are stored as packed ABGR uint32 for direct ImageData writes.
 

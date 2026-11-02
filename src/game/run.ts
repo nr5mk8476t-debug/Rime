@@ -12,7 +12,7 @@ import { OPEN_TIME } from '../data/encounters';
 export const COLS = 13, ROWS = 4;
 export const CLOSE_TIME = 18 * 60;
 const ARRIVE_GAP = 30;          // minutes between one customer leaving and the next arriving
-const SAVE_KEY = 'underhold.save.v1';
+const SAVE_KEY = 'rime.save.v1';
 
 /** title: start screen. open: shop hours. closed: end-of-day card. voss: his visit. dead: run over. */
 export type Mode = 'title' | 'open' | 'closed' | 'dead';
@@ -61,7 +61,7 @@ export class Run {
   /** set while Voss is at the window: 'warn' (day-3 visit) or 'collect' (the deadline) */
   voss: { kind: 'warn' | 'collect'; short: boolean; t: number; done: boolean } | null = null;
 
-  constructor() { try { this.best = Number(localStorage.getItem('underhold.best') || 0); } catch { this.best = 0; } }
+  constructor() { try { this.best = Number(localStorage.getItem('rime.best') || 0); } catch { this.best = 0; } }
 
   // ------------------------------------------------------------------ rent
   get cycle() { return Math.floor((this.day - 1) / BALANCE.daysPerCycle); }
@@ -236,7 +236,7 @@ export class Run {
     this.mode = 'closed';
     this.current = null;
     this.best = Math.max(this.best, this.day);
-    try { localStorage.setItem('underhold.best', String(this.best)); } catch { /* ignore */ }
+    try { localStorage.setItem('rime.best', String(this.best)); } catch { /* ignore */ }
     this.save();
   }
 
@@ -267,7 +267,7 @@ export class Run {
     try { const d = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); return d && d.v === 1 ? d : null; } catch { return null; }
   }
   static clear(best?: number) {
-    try { localStorage.removeItem(SAVE_KEY); if (best !== undefined) localStorage.setItem('underhold.best', String(best)); } catch { /* ignore */ }
+    try { localStorage.removeItem(SAVE_KEY); if (best !== undefined) localStorage.setItem('rime.best', String(best)); } catch { /* ignore */ }
   }
   static hasSave() { const d = Run.load(); return !!d && typeof d.day === 'number'; }
 

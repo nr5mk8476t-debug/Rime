@@ -996,8 +996,8 @@ export class ShopScene {
   titleScreen(s: Surface) {
     for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if ((x + y) % 2 === 0) s.px(x, y, P.black);
     const cx = 320;
-    const tw = bigText(s, 'UNDERHOLD', 0, -100, 4, A[5]);
-    bigText(s, 'UNDERHOLD', cx - Math.round(tw / 2), 70, 4, A[5], P.black);
+    const tw = bigText(s, 'RIME', 0, -100, 7, A[5]);
+    bigText(s, 'RIME', cx - Math.round(tw / 2), 58, 7, A[5], P.black);
     text(s, 'A pawn shop under the Halcyon ship.', cx - 82, 122, PA[4], BODY, P.black);
     text(s, 'Pay Mr. Voss every five days. Or else.', cx - 88, 134, PA[3], BODY, P.black);
     const has = Run.hasSave();
@@ -1182,10 +1182,10 @@ function seg2(s: Surface, ch: string, x: number, y: number, on: Col, off: Col) {
 
 /** window positions survive reloads in this browser only; nothing breaks if storage is unavailable */
 function loadPanels(): Record<string, { x: number; y: number } | null> {
-  try { return JSON.parse(localStorage.getItem('underhold.panels') || '{}'); } catch { return {}; }
+  try { return JSON.parse(localStorage.getItem('rime.panels') || '{}'); } catch { return {}; }
 }
 function savePanels(p: Record<string, { x: number; y: number } | null>) {
-  try { localStorage.setItem('underhold.panels', JSON.stringify(p)); } catch { /* storage blocked */ }
+  try { localStorage.setItem('rime.panels', JSON.stringify(p)); } catch { /* storage blocked */ }
 }
 
 function shadeHex(h: string, k: number) {

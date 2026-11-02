@@ -1,7 +1,7 @@
 """Seeds: determinism, variety, and balance across many random runs."""
 import asyncio, json, sys
 from playwright.async_api import async_playwright
-URL = 'file:///home/claude/vel/dist-single/underhold.html'
+URL = 'file:///home/claude/vel/dist-single/rime.html'
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 16
 
 BOT = """async ({ seed, policy, maxSec }) => {

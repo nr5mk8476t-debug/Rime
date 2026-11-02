@@ -7,7 +7,7 @@ async def main():
         b = await p.chromium.launch(executable_path='/usr/bin/google-chrome', args=['--no-sandbox', '--autoplay-policy=no-user-gesture-required'])
         pg = await b.new_page(viewport={'width': 1600, 'height': 960})
         errs = []; pg.on('pageerror', lambda e: errs.append(str(e))); pg.on('console', lambda m: m.type == 'error' and errs.append(m.text))
-        await pg.goto('file:///home/claude/vel/dist-single/underhold.html'); await pg.wait_for_timeout(400)
+        await pg.goto('file:///home/claude/vel/dist-single/rime.html'); await pg.wait_for_timeout(400)
         L, T, S = await pg.evaluate("(() => { const r = document.getElementById('game').getBoundingClientRect(); return [r.left, r.top, r.width / 1280]; })()")
         await pg.mouse.click(L + 20, T + 20)   # first gesture starts audio
         await pg.evaluate("""(() => { const s = window.__sound; const d = s.ctx.createMediaStreamDestination();

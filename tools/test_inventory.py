@@ -1,7 +1,7 @@
 """Automated edge-case checks for inventory dragging, run against the built page."""
 import asyncio, json
 from playwright.async_api import async_playwright
-URL = 'file:///home/claude/vel/dist-single/underhold.html'
+URL = 'file:///home/claude/vel/dist-single/rime.html'
 TRAY = json.load(open('/home/claude/vel/src/art/plates/tray.json'))
 
 async def main():
