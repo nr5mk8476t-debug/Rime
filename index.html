@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Underhold Pawn</title>
+  <meta name="claude:viewport-fit-sides" content="cover" />
+  <style>
+    :root { --bg: #050607; --ink: #6e9c89; --dim: #2a4c46; --gold: #c99a3d; color-scheme: dark; }
+    html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
+    body { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); box-sizing: border-box; }
+    body { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    #game { image-rendering: pixelated; image-rendering: crisp-edges; display: block; cursor: default; }
+    #review {
+      font: 12px/1.4 ui-monospace, Menlo, Consolas, monospace; color: var(--ink);
+      padding: 6px 10px; letter-spacing: .02em; user-select: none; text-align: center;
+    }
+    #review b { color: var(--gold); font-weight: 600; }
+    #review.hidden { display: none; }
+  </style>
+</head>
+<body>
+  <canvas id="game" width="1280" height="720"></canvas>
+  <div id="review"><b>Drag</b> goods &nbsp;·&nbsp; <b>click</b> to inspect &nbsp;·&nbsp; <b>click the rent monitor</b> to pay early &nbsp;·&nbsp; <b>M</b> sound &nbsp;<b>R</b> reset windows &nbsp;<b>Esc</b> cancel &nbsp;<b>H</b> hide this bar</div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

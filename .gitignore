@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-single/
+shots/
+*.zip
+*.log
+.DS_Store
+# regenerated from the originals by tools/kell_frames.py
+art-src/kell_aligned_*
+art-src/kell_full_*
